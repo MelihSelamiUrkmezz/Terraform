@@ -22,5 +22,9 @@ variable tuple {
   type = tuple([number,bool,string])
   default = [12,true,"Melih"]
 }
+variable dict {
+  type = map
+  default = {name="Melih",age=23}
+}
 
 
