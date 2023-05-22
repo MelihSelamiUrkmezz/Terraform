@@ -8,10 +8,10 @@ terraform {
 }
 
 provider "google" {
-  project = "terraform-gcp-387515"
+  project = "<your_project_id>"
   region = "us-central1"
   zone = "us-central1-a"  
-  credentials = "keys.json"
+  credentials = "<your_sa_key_json>"
   }
 
   resource "google_storage_bucket" "GCS" {
