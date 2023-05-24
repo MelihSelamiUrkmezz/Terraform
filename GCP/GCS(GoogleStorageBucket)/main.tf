@@ -8,6 +8,20 @@ resource "google_storage_bucket" "GCS" {
      "object" = "bucket",
      "env" = "prod" 
     }
+
+    lifecycle_rule {
+        action {
+          type = "SetStorageClass"
+          storage_class = "COLDLINE"
+        }
+        condition {
+          age=5
+        }
+    }
+    retention_policy {
+      is_locked = true
+      retention_period = 86400
+    }
 }
 
 resource "google_storage_bucket_object" "GCS_OBJECT" {
